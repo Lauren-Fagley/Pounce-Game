@@ -1,0 +1,90 @@
+<div class="content">
+        <form ng-submit="addPlayer()">
+            <input type="text" placeholder="Name" ng-model="newplayer" required/>
+            <input type="submit" value="Add Player"/>
+        </form>
+        
+        <form ng-submit="addScore()">
+            <ul>
+              <h1 class="round" ng-show="players.length >= 1">Round {{round}}</h1>
+              <div ng-if="currentRound > 1 && !inEditMode">
+                <!--<span>Edit Previous Rounds:</span>
+                <button ng-repeat="n in [].constructor(currentRound-1) track by $index" ng-click="loadRound($index)"> 
+                  {{$index +1}}
+                </button>-->
+                </div>
+                <!--<div ng-if="inEditMode">
+                    <p>You are editing Round {{currentRoundIndex + 1}}</p>
+                </div>-->
+                  <li class= "player-list" ng-repeat="player in players">
+                      {{player.name}}
+      
+                      <div class="remove" ng-click="removePlayer(player)">x</div>
+                      <span>Score: {{player.score}}</span>
+                      
+                      <input type="number" placeholder ="Pounce Pile" ng-model="player.pouncePile" min="0" max="13" ng-if="!player.manualToggle"/>
+                      <input type="number" placeholder ="Cards Out" ng-model="player.cardsOut" min="0" max="52" ng-if="!player.manualToggle"/>
+                      <input type = "number" placeholder = "Total" ng-model ="player.total" min="-26" max="52"  ng-if="player.manualToggle"/>
+                      <button class="manual-toggle" type="button" ng-click="switch(player)">{{player.message}}</button>
+                </li>
+            </ul>
+            <input type="submit" value="Submit Score" ng-show="players.length >=2 && !winner && !inEditMode" ng-click="startNewRound()"/>
+            <!--<button ng-click="saveEditedRound()" ng-if="inEditMode">Save Changes</button>-->
+
+            <p ng-hide="players.length >= 2">Not enough players...</p>
+        </form>
+        
+        <div class="winner-message" ng-if="winner">
+           🎉 <strong>{{winner}}</strong> 🎉
+        </div>
+        <button ng-click="reset()" ng-show="winner" style="display: block; margin: 20px auto;">Play again?</button>
+</div>
+
+<div class="race-wrapper">
+  <div class="race-header">
+    <div class="label-space"></div>
+    <div class="track-line">Start</div>
+    <div class="track-fill"></div>
+    <div class="track-line">🏁 Finish</div>
+  </div>
+
+  <div class="race-row" ng-repeat="i in getLaneArray() track by $index">
+    <!-- Label -->
+    <div class="label">
+      <span ng-if="players[$index]">{{ players[$index].name }}</span>
+      <span ng-if="!players[$index]">Lane {{$index + 1}}</span>
+    </div>
+
+    <div class ="horse-track">
+      <div class="lane"></div>
+      <!-- Random Horse. Horse pngs from vecteezy.com-->
+      <img class="horse"
+           ng-if="players[$index]"
+           ng-src="{{players[$index].horse}}" 
+           ng-style="{ left: players[$index].score + '%' }" />
+    <!-- Lane -->
+     
+  </div>
+  <div class="label-space"></div>
+  </div>
+</div>
+<div class="score-board-wrapper" ng-if="players.length >= 2">
+  <div class="score-header-row">
+    <div class="score-col place-header">PLACE</div>
+    <div class="score-col name-header">NAME</div>
+    <div class="score-col score-header">SCORE</div>
+    <div class="score-col dialogue-header">COMMENTARY</div>
+  </div>
+<div class="score-animate-wrapper">
+  <div class="score-row" ng-repeat="player in players | orderBy:'-score' track by player.name">
+    <div class="score-col place"> {{ $index + 1 }}{{ getOrdinal($index + 1) }} </div>
+    <div class="score-col name"> {{ player.name }} </div>
+    <div class="score-col score"> {{ player.score }} </div>
+    <div class="score-col dialogue"> {{ player.dialogue || '' }} </div>
+  </div>
+</div>
+</div>
+
+
+
+

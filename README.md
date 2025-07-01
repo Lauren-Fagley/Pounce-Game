@@ -1,4 +1,4 @@
-# 🐴 POUNCE
+# POUNCE
 
 **Pounce** is a fast-paced, horse-racing-themed score tracker for the card game of the same name. Designed to make scorekeeping more fun and visual, Pounce uses AngularJS and custom animations to display game progress with horses racing across the screen. 
 
@@ -6,7 +6,7 @@ This project also served as a personal challenge to improve my **HTML**, **CSS**
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 - Learn how to build a single-page app (SPA) with AngularJS
 - Practice responsive UI design with HTML/CSS
@@ -15,24 +15,24 @@ This project also served as a personal challenge to improve my **HTML**, **CSS**
 
 ---
 
-## 🌟 Features
+## Features
 
-### 🧑‍🤝‍🧑 Add & Manage Players
+### Add & Manage Players
 - Unique name validation
 - Manual or automatic score input options
 - Player removal & round reset
 
-### 🧮 Score Calculations
+### Score Calculations
 - Manual input or automatic calculation using pounce pile and cards out
 - Win condition: First to 100+ points
 - Handles ties and negative scores
 
-### 🐎 Horse Race Animation
+### Horse Race Animation
 - Players each get a random horse PNG (from Vecteezy)
 - Horse position updates based on current score
 - Visual race with lanes and progress bar
 
-### 🗣️ Dynamic Commentary
+### Dynamic Commentary
 - Custom messages for:
   - Taking or losing the lead
   - Maintaining position
@@ -40,14 +40,14 @@ This project also served as a personal challenge to improve my **HTML**, **CSS**
   - Ties
 - Adds humor and character to each round
 
-### 📊 Scoreboard
+### Scoreboard
 - Ranks players with ordinal positions (1st, 2nd, etc.)
 - Displays player names, scores, and dialogue
 - Smooth animated updates
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 - **AngularJS 1.8.2** – routing, views, and app logic
 - **HTML5 / CSS3** – layout, styling, and animations
@@ -59,7 +59,7 @@ This project also served as a personal challenge to improve my **HTML**, **CSS**
 
 ---
 
-## 🧱 File Structure
+## File Structure
 
 pounce/
 
@@ -88,7 +88,7 @@ pounce/
 
 ---
 
-## 🚧 Planned Features
+## Planned Features
 
 ### Coming Soon
 -  Scoreboard animations
@@ -103,7 +103,7 @@ pounce/
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
 - How to build and structure a single-page app using AngularJS
 - Creating dynamic forms and reusable views
@@ -113,7 +113,7 @@ pounce/
 
 ---
 
-## 👩‍💻 About the Creator
+## About the Creator
 
 **Lauren Fagley**  
  Computer Science graduate  
@@ -122,7 +122,7 @@ pounce/
 
 ---
 
-## 📜 License
+## License
 
 This is a personal learning project and not intended for commercial use. Feel free to fork and build upon it for educational or personal fun!
 
